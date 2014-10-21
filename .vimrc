@@ -47,6 +47,9 @@ augroup END
 " md as markdown, instead of modula2
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
+" for tmux
+autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* set filetype=tmux
+
 " 個別の色設定
 autocmd ColorScheme * highlight Normal cterm=NONE ctermfg=NONE ctermbg=NONE
 autocmd ColorScheme * highlight Delimiter ctermfg=NONE

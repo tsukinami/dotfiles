@@ -23,3 +23,8 @@ alias ll="ls -laF --color"
 
 # prompt
 export PS1="[\u@\H \W\$(__git_ps1)]\\\$ "
+
+# import .my.bashrc
+if [ -f ~/.my.bashrc ]; then
+    . ~/.my.bashrc
+fi

@@ -11,6 +11,13 @@ autocmd ColorScheme * highlight PmenuSel ctermbg=white ctermfg=24
 autocmd ColorScheme * highlight SignColumn ctermbg=NONE
 autocmd ColorScheme * highlight SpecialKey cterm=NONE ctermfg=236
 
+" 行末のスペースをハイライト
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
+
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=reverse ctermfg=236 gui=reverse guifg=236
 endfunction

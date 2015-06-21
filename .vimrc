@@ -13,6 +13,7 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Markdown'
 NeoBundle 'embear/vim-localvimrc'
+NeoBundle 'Chiel92/vim-autoformat'
 
 if filereadable(expand('~/.vimrc.neobundle'))
     source ~/.vimrc.neobundle

@@ -14,6 +14,10 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Markdown'
 NeoBundle 'embear/vim-localvimrc'
 
+if filereadable(expand('~/.vimrc.neobundle'))
+    source ~/.vimrc.neobundle
+endif
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -24,3 +28,4 @@ NeoBundleCheck
 syntax enable
 
 runtime! conf.d/.vimrc.*
+runtime ~/.vimrc.local

@@ -57,8 +57,8 @@ case "${OSTYPE}" in
 esac
 
 # import .my.bashrc
-if [ -f ~/.my.bashrc ]; then
-    . ~/.my.bashrc
+if [ -f ~/.bashrc.local ]; then
+    . ~/.bashrc.local
 fi
 
 # vim: set tabstop=4 shiftwidth=4 expandtab fenc=utf-8 ff=unix :

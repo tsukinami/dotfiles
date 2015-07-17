@@ -7,6 +7,9 @@ umask 022
 # disable stty stop for i-search
 [ -t 0 ] && stty stop undef
 
+# lang
+export LANG=ja_JP.UTF-8
+
 # editor
 export EDITOR=vim
 
@@ -19,8 +22,16 @@ if [ -e /usr/local/opt/coreutils/libexec ]; then
     export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 fi
 
+if [ -e $HOME/local/share/man ]; then
+    export MANPATH=$HOME/local/share/man:$MANPATH
+fi
+if [ -e $HOME/local/man ]; then
+    export MANPATH=$HOME/local/man:$MANPATH
+fi
+
 # path
 export PATH=$HOME/local/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
 
 # bash completion
 MY_BASH_COMPLETION_DIR=(/usr/local/etc/bash_completion.d $HOME/local/etc/bash_completion.d)
@@ -45,6 +56,9 @@ case "${OSTYPE}" in
         elif type gls &> /dev/null; then
             alias ls="gls --color"
             alias ll="gls -alF --color"
+        elif [ -e $HOME/local/bin/ls ]; then # coreutils
+            alias ls="ls --color"
+            alias ll="ls -alF --color"
         else
             alias ls="ls -G"
             alias ll="ls -alFG"

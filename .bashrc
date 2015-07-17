@@ -23,8 +23,8 @@ fi
 export PATH=$HOME/local/bin:$PATH
 
 # bash completion
-BASH_COMPLETION_DIR=(/usr/local/etc/bash_completion.d $HOME/local/etc/bash_completion.d)
-for dir in ${BASH_COMPLETION_DIR[@]}; do
+MY_BASH_COMPLETION_DIR=(/usr/local/etc/bash_completion.d $HOME/local/etc/bash_completion.d)
+for dir in ${MY_BASH_COMPLETION_DIR[@]}; do
     [ -e $dir ] && for f in $(find $dir -type f -or -type l -follow); do
         [ -f $f ] && . $f
     done

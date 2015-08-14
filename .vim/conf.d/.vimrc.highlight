@@ -19,7 +19,7 @@ augroup HighlightTrailingSpaces
 augroup END
 
 function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=reverse ctermfg=236 gui=reverse guifg=236
+  highlight ZenkakuSpace cterm=reverse ctermfg=236
 endfunction
 
 if has('syntax')

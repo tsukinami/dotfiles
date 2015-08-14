@@ -29,4 +29,6 @@ NeoBundleCheck
 syntax enable
 
 runtime! conf.d/.vimrc.*
-source ~/.vimrc.local
+if filereadable(expand('~/.vimrc.local'))
+    source! ~/.vimrc.local
+endif

@@ -50,15 +50,18 @@ export PS1='[\[\033[32m\]\u@\H\[\033[00m\] \[\033[34m\]\W\[\033[31m\]$(__git_ps1
 # alias
 case "${OSTYPE}" in
     darwin*|freebsd*)
-        if type gnuls &> /dev/null; then
+        if [ -e /usr/local/opt/coreutils/libexec/gnubin/ls ]; then # coreutils
+            alias ls="ls --color"
+            alias ll="ls -alF --color"
+        elif [ -e $HOME/local/bin/ls ]; then # coreutils
+            alias ls="ls --color"
+            alias ll="ls -alF --color"
+        elif type gnuls &> /dev/null; then
             alias ls="gnuls --color"
             alias ll="gnuls -alF --color"
         elif type gls &> /dev/null; then
             alias ls="gls --color"
             alias ll="gls -alF --color"
-        elif [ -e $HOME/local/bin/ls ]; then # coreutils
-            alias ls="ls --color"
-            alias ll="ls -alF --color"
         else
             alias ls="ls -G"
             alias ll="ls -alFG"

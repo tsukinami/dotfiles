@@ -30,5 +30,5 @@ syntax enable
 
 runtime! conf.d/.vimrc.*
 if filereadable(expand('~/.vimrc.local'))
-    source! ~/.vimrc.local
+    source ~/.vimrc.local
 endif
